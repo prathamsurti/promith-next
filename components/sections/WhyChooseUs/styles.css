@@ -1,0 +1,486 @@
+/* WhyChooseUsSection Styles */
+
+/* Section Background */
+.why-choose-section {
+  background-color: #f5f5f5;
+  border-radius: 32px;
+  margin: 2rem 0;
+  
+  @media (min-width: 768px) {
+    margin: 3rem 0;
+  }
+  
+  @media (max-width: 768px) {
+    margin: 1rem 0;
+    border-radius: 24px;
+  }
+  
+  @media (max-width: 640px) {
+    margin: 0.5rem 0;
+    border-radius: 16px;
+  }
+}
+
+/* Benefit Cards - Main container with neumorphism */
+.benefit-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 347px;
+  width: 100%;
+  max-width: 346px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  box-shadow: 
+    -10px -10px 20px rgba(255, 255, 255, 0.8),
+    15px 15px 30px rgba(209, 209, 209, 0.6),
+    20px 20px 40px rgba(209, 209, 209, 0.4);
+}
+
+.benefit-card-with-padding {
+  padding: 30px;
+}
+
+/* Growth Card - BEFORE/AFTER Label */
+.before-after-label {
+  position: relative;
+  width: 5rem;
+  height: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  box-shadow: 
+    -2px -2px 4px rgba(255, 255, 255, 0.9),
+    3px 3px 6px rgba(209, 209, 209, 0.5),
+    4px 4px 8px rgba(209, 209, 209, 0.3);
+}
+
+/* Growth Card - Pills (Automation/Cost labels) */
+.metric-pill {
+  position: absolute;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  color: #1f2937;
+  background-color: #f5f5f5;
+  box-shadow: 
+    -3px -3px 6px rgba(255, 255, 255, 0.8),
+    5px 5px 10px rgba(209, 209, 209, 0.5),
+    6px 6px 12px rgba(209, 209, 209, 0.3);
+}
+
+.metric-pill span {
+  display: block;
+  min-height: 1rem;
+}
+
+/* Growth Card - Chart Bars */
+.chart-bar {
+  width: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: #f5f5f5;
+  box-shadow: 
+    -4px -4px 8px rgba(255, 255, 255, 0.8),
+    6px 6px 12px rgba(209, 209, 209, 0.5),
+    8px 8px 16px rgba(209, 209, 209, 0.3);
+}
+
+/* Analytics Card - Circular Gauge Container */
+.gauge-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  position: relative;
+  background-color: #f5f5f5;
+  box-shadow: 12px 12px 24px #d1d1d1, -12px -12px 24px #ffffff;
+}
+
+/* Analytics Card - Gauge Needle */
+.gauge-needle {
+  position: absolute;
+  left: 51.7%;
+  top: 22px;
+  width: 16px;
+  height: 87px;
+  border-radius: 100px;
+  transform: translateX(-50%);
+  transform-origin: 61% 80% 0px;
+  will-change: transform;
+  background-color: #f5f5f5;
+  box-shadow: 6px 6px 12px #d1d1d1, -6px -6px 12px #ffffff;
+}
+
+/* Analytics Card - Needle Base */
+.needle-base {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 1px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px,
+    rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px,
+    rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px,
+    rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px,
+    rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px,
+    rgba(0, 0, 0, 0.02) 0px 30px 30px -4px;
+}
+
+.needle-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 100px;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Analytics Card - Decorative Dots */
+.decorative-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  background-color: #f5f5f5;
+  box-shadow: 4px 4px 8px #d1d1d1, -4px -4px 8px #ffffff;
+}
+
+.decorative-dot-animated {
+  will-change: transform;
+}
+
+/* Sync Card - Support Container */
+.sync-support-container {
+  position: relative;
+  width: 200px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sync - Neumorphic Circle */
+.sync-neuro-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  box-shadow: 
+    inset 6px 6px 12px rgba(209, 209, 209, 0.5),
+    inset -6px -6px 12px rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: sync-neuro-pulse 3s ease-in-out infinite;
+}
+
+@keyframes sync-neuro-pulse {
+  0%, 100% { 
+    box-shadow: inset 6px 6px 12px rgba(209, 209, 209, 0.5),
+               inset -6px -6px 12px rgba(255, 255, 255, 0.7);
+  }
+  50% { 
+    box-shadow: inset 8px 8px 16px rgba(209, 209, 209, 0.6),
+               inset -8px -8px 16px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Sync - Support Icon (Headset) */
+.sync-support-icon {
+  font-size: 48px;
+  position: relative;
+  animation: sync-float 3s ease-in-out infinite;
+}
+
+.sync-support-icon::before {
+  content: '🎧';
+  filter: drop-shadow(2px 2px 4px rgba(209, 209, 209, 0.3));
+}
+
+@keyframes sync-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Sync - Time Badge (24/7) */
+.sync-time-badge {
+  position: absolute;
+  top: -15px;
+  background: #f5f5f5;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  box-shadow: 
+    4px 4px 8px rgba(209, 209, 209, 0.5),
+    -4px -4px 8px rgba(255, 255, 255, 0.7);
+  animation: sync-badge-float 3s ease-in-out infinite;
+}
+
+@keyframes sync-badge-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+/* Sync - Status Indicators */
+.sync-status-indicators {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sync-status-dot {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: #f5f5f5;
+  box-shadow: 
+    4px 4px 8px rgba(209, 209, 209, 0.5),
+    -4px -4px 8px rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: sync-dot-pulse 6s ease-in-out infinite;
+  opacity: 0;
+}
+
+.sync-status-dot::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  box-shadow: 
+    0 0 10px rgba(74, 222, 128, 0.5),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Dot Positions - 3 o'clock and 9 o'clock */
+.sync-status-dot:nth-child(1) {
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%) scale(0);
+  animation-delay: 0s;
+}
+
+.sync-status-dot-hidden {
+  display: none;
+}
+
+.sync-status-dot:nth-child(3) {
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%) scale(0);
+  animation-delay: 3s;
+}
+
+@keyframes sync-dot-pulse {
+  0%, 15% { 
+    opacity: 0; 
+    transform: translateY(-50%) scale(0); 
+  }
+  20%, 90% { 
+    opacity: 1; 
+    transform: translateY(-50%) scale(1);
+    box-shadow: 4px 4px 8px rgba(209, 209, 209, 0.5),
+               -4px -4px 8px rgba(255, 255, 255, 0.7);
+  }
+  95%, 100% { 
+    opacity: 0; 
+    transform: translateY(-50%) scale(0); 
+  }
+}
+
+/* Text Content */
+.benefit-title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2em;
+  color: black;
+  text-align: left;
+  width: 100%;
+}
+
+.benefit-description {
+  font-size: 16px;
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: left;
+  width: 100%;
+}
+
+/* Section Header */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.section-badge-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Gradient Heading */
+.gradient-heading {
+  display: block;
+  width: 100%;
+  font-family: 'Satoshi', 'Inter', sans-serif;
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.56px;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 1rem;
+  background: linear-gradient(0deg, rgb(0, 0, 0) 34%, rgb(255, 255, 255) 124%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: rgb(0, 0, 0);
+  word-break: break-word;
+}
+
+@media (max-width: 1024px) {
+  .gradient-heading {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gradient-heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gradient-heading {
+    font-size: 32px;
+  }
+}
+
+/* Bottom Tags */
+.benefit-tag {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  background-color: white;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+  transition: border-color 300ms;
+  cursor: default;
+}
+
+.benefit-tag:hover {
+  border-color: #d1d5db;
+}
+
+/* Section container */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Badge pill */
+.badge-pill {
+  background-color: #f5f5f5;
+  box-shadow: 
+    6px 6px 12px #d1d1d1,
+    -6px -6px 12px #ffffff;
+}
+
+/* Tag pills at bottom */
+.tag-pill {
+  background-color: rgb(245, 245, 245);
+  border-radius: 228px;
+  box-shadow: 
+    rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px,
+    rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px,
+    rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px,
+    rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px,
+    rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px,
+    rgba(0, 0, 0, 0.02) 0px 30px 30px -4px,
+    rgb(255, 255, 255) 0px 3px 1px 0px inset;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Marquee Container */
+.marquee-container {
+  width: 100%;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.marquee-content {
+  display: flex;
+  gap: 24px;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+  align-items: center;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Gauge outer container positioning */
+.gauge-outer-container {
+  transform: translateX(-50%);
+}
