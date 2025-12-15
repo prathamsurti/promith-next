@@ -1,7 +1,5 @@
-'use client'; // Needed because Header/Footer likely use interactivity
-
 import { ReactNode } from 'react';
-import Header from './Header'; // Ensure these imports point to your files
+import Header from './Header';
 import Footer from './Footer';
 
 interface MainLayoutProps {

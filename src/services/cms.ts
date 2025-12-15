@@ -1,8 +1,19 @@
-// Environment variables (Next.js)
-// NOTE: Client-side access requires NEXT_PUBLIC_* variables.
-const CMS_URL = process.env.NEXT_PUBLIC_CMS_URL;
-const CMS_TOKEN = process.env.NEXT_PUBLIC_CMS_TOKEN;
-const PREVIEW_ENABLED = process.env.NEXT_PUBLIC_CMS_PREVIEW_ENABLED === 'true';
+/**
+ * CMS Service (Optional - For Future Use)
+ * 
+ * This service is currently NOT in use. The site uses /src/data/content.json
+ * for all content management.
+ * 
+ * Keep this file if you plan to integrate a headless CMS (Strapi, Contentful, etc.)
+ * in the future. Otherwise, you can safely delete this file.
+ */
+
+import 'server-only';
+
+// Server-side environment variables (NOT exposed to client)
+const CMS_URL = process.env.CMS_URL;
+const CMS_TOKEN = process.env.CMS_TOKEN;
+const PREVIEW_ENABLED = process.env.CMS_PREVIEW_ENABLED === 'true';
 
 type CmsResponse<T = unknown> = {
   data: T;
@@ -17,10 +28,9 @@ const buildHeaders = (): HeadersInit => {
     headers.Authorization = `Bearer ${CMS_TOKEN}`;
   }
 
-  if (PREVIEW_ENABLED && typeof window !== 'undefined') {
-    const urlParams = new URLSearchParams(window.location.search);
-    const isPreview = urlParams.get('preview') === 'true';
-    if (isPreview) headers['X-Preview-Mode'] = 'true';
+  // Preview mode can be handled via Next.js preview mode or request headers
+  if (PREVIEW_ENABLED) {
+    headers['X-Preview-Mode'] = 'true';
   }
 
   return headers;
@@ -28,12 +38,13 @@ const buildHeaders = (): HeadersInit => {
 
 const get = async <T = unknown>(pathWithQuery: string): Promise<CmsResponse<T>> => {
   if (!CMS_URL) {
-    throw new Error('CMS is not configured (missing NEXT_PUBLIC_CMS_URL)');
+    throw new Error('CMS is not configured (missing CMS_URL)');
   }
 
   const response = await fetch(`${CMS_URL}${pathWithQuery}`, {
     method: 'GET',
     headers: buildHeaders(),
+    next: { revalidate: 3600 }, // Cache for 1 hour (ISR)
   });
 
   if (!response.ok) {

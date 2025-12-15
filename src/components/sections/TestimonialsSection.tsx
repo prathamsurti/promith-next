@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import Card, { CardHeader, CardContent } from '../ui/Card';
 import { staggerContainer, staggerItem } from '../../utils/animations';

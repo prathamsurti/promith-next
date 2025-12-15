@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef, useId, useState } from 'react';
 import { cn } from '../../utils/helpers';
 import type { ChangeEvent, TextareaHTMLAttributes } from 'react';
