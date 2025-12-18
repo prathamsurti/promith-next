@@ -36,7 +36,7 @@
   },
   "whyChooseUs": {
     "badge": "WHY CHOOSE US",
-    "title": "AI-Driven Growth",
+    "title": "Unified Operations Platform",
     "subtitle": "See beyond the numbers. Act with precision. Grow with intelligence.",
     "benefits": [
       {
@@ -45,8 +45,8 @@
         "graphic": "analytics"
       },
       {
-        "title": "AI-Driven Growth",
-        "description": "Make smarter moves with accurate, real-time business insights.",
+        "title": "Data-Driven Growth",
+        "description": "Make smarter moves with accurate, real-time cost savings.",
         "graphic": "growth"
       },
       {
@@ -133,7 +133,7 @@
   },
   "process": {
     "badge": "PROCESS",
-    "title": "Simple & Scalable",
+    "title": "Comprehensible User Experience",
     "subtitle": "A transparent process of collaboration and feedback",
     "steps": [
       {
@@ -160,7 +160,7 @@
       },
       {
         "number": "03",
-        "title": "Ongoing Support & Optimization",
+        "title": "Ongoing Support & Optimisation",
         "description": "With us, you're never alone. Our AI assistant, Agani, monitors your operations, provides insights, and offers second opinions to guide your growth. And our 24/7 helpline isn't just for tech support - it's your growth partner, ready to advise, guide, and help you make smarter business decisions anytime.",
         "image": "https://framerusercontent.com/images/rL2mn1WNvlJqhxa5RfsgWqkaxg.png?width=800&height=1015",
         "icon": {
@@ -225,7 +225,7 @@
       "width": "48px",
       "height": "48px"
     },
-    "description": "AI-powered automation solutions for modern businesses",
+    "description": "More than just a system",
     "links": {
       "company": [
         { "label": "About", "href": "/about" },
@@ -234,7 +234,7 @@
       ],
       "services": [
         { "label": "AI Automation", "href": "/services/ai-automation" },
-        { "label": "Workflow Optimization", "href": "/services/workflow" },
+        { "label": "Workflow Optimisation", "href": "/services/workflow" },
         { "label": "Analytics", "href": "/services/analytics" }
       ],
       "resources": [
@@ -268,12 +268,12 @@
         },
         "phone": {
           "label": "Phone Number",
-          "placeholder": "+1 (555) 000-0000",
+          "placeholder": "+44 (555) 000-0000",
           "required": false
         },
         "company": {
-          "label": "Company Name",
-          "placeholder": "Your Company",
+          "label": "Restaurant Name",
+          "placeholder": "Your Restaurant",
           "required": false
         },
         "service": {
@@ -292,7 +292,7 @@
         },
         "message": {
           "label": "Message",
-          "placeholder": "Tell us about your project and how we can help...",
+          "placeholder": "Tell us about your restaurant and how we can help...",
           "required": true
         }
       },
@@ -307,20 +307,21 @@
       "title": "Other Ways to Reach Us",
       "email": {
         "label": "Email",
-        "value": "hello@promith.com",
+        "value": "@promith.com",
         "href": "mailto:hello@promith.com"
       },
       "phone": {
         "label": "Phone",
-        "value": "+1 (555) 000-0000",
-        "href": "tel:+15550000000"
+        "value": "+44 (776) 527-4983",
+        "href": "tel:+447765274983"
       },
       "address": {
         "label": "Office",
         "lines": [
-          "123 Business Ave",
-          "Suite 100",
-          "City, State 12345"
+          "Rose Bowl",
+          "Portland Crescent",
+          "Leeds",
+          "LS1 3HB"
         ]
       }
     },

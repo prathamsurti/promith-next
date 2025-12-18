@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import content from '../data/content.json';
+import content from '@/data/content.json';
 import './Header.css';
 
 const Header = () => {

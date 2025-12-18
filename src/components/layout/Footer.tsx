@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import content from '../data/content.json';
+import content from '@/data/content.json';
 import './Footer.css';
 
 const Footer = () => {
