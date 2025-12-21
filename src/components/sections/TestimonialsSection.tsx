@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import ImageWithLoading from '@/components/ui/ImageWithLoading';
 import Card, { CardHeader, CardContent } from '../ui/Card';
 import { staggerContainer, staggerItem } from '../../utils/animations';
-import './TestimonialsSection.css';
+// import './TestimonialsSection.css'; // Converted to Tailwind
 
 export interface Testimonial {
   quote: string;
@@ -62,14 +63,14 @@ const TestimonialsSection = ({
 
         {/* Testimonials Grid */}
         <motion.div
-          className="testimonials-grid"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
           {testimonials.map((testimonial, index) => (
-            <motion.div key={index} variants={staggerItem} className="testimonial-card">
+            <motion.div key={index} variants={staggerItem} className="w-full md:max-w-[346px] h-auto">
               <Card variant="elevated" className="h-full">
                 <CardHeader>
                   {/* Rating */}
@@ -86,17 +87,15 @@ const TestimonialsSection = ({
 
                   {/* Author Info */}
                   <div className="flex items-center gap-4">
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.author}
-                      className="w-12 h-12 rounded-full object-cover"
-                      onError={(e) => {
-                        // Fallback to placeholder if image fails
-                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(
-                          testimonial.author
-                        )}&background=8855ff&color=fff`;
-                      }}
-                    />
+                    <div className="relative w-12 h-12 rounded-full overflow-hidden">
+                      <ImageWithLoading
+                        src={testimonial.avatar}
+                        alt={testimonial.author}
+                        fill
+                        className="object-cover"
+                        sizes="48px"
+                      />
+                    </div>
                     <div>
                       <p className="font-semibold text-gray-900">
                         {testimonial.author}

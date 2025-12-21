@@ -15,23 +15,11 @@ const FounderNote = ({
   founderName,
   founderTitle,
 }: FounderNoteProps) => {
-  // Process the quote to identify highlight words (important keywords to be displayed in black)
   const highlightWords = [
-    'Fire',
-    'Prometheus',
-    'humanity',
-    'Technology',
-    'guide',
-    'harnessing',
-    'accessible',
-    'powerful',
-    'mission',
-    'grow',
-    'innovate',
-    'succeed'
+    'Fire', 'Prometheus', 'humanity', 'Technology', 'guide', 'harnessing',
+    'accessible', 'powerful', 'mission', 'grow', 'innovate', 'succeed'
   ];
   
-  // Split and process words
   const processQuote = (text: string) => {
     const words = text.split(' ');
     let hereCount = 0;
@@ -40,32 +28,27 @@ const FounderNote = ({
       const cleanWord = word.replace(/[""",.;:!?-]/g, '');
       let isHighlight = highlightWords.includes(cleanWord);
       
-      // Special handling for "here" - only highlight the FIRST occurrence
+      // Special logic from your original file
       if (cleanWord === "here") {
         hereCount++;
-        isHighlight = hereCount === 1; // Only highlight the first "here"
+        isHighlight = hereCount === 1;
       }
       
-      // Special handling for "We're" - always highlight
-      if (cleanWord === "We're" || cleanWord === "Were") {
-        isHighlight = true;
-      }
-      
-      // Special handling for "easy-to-use"
-      if (word.includes("easy-to-use")) {
+      if (cleanWord === "We're" || cleanWord === "Were" || word.includes("easy-to-use")) {
         isHighlight = true;
       }
       
       return (
-        <span
+        <motion.span
           key={index}
           className={`quote-word ${isHighlight ? 'highlight' : ''}`}
-          style={{
-            animationDelay: `${index * 0.03}s`,
-          }}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: index * 0.03, ease: "easeOut" }}
+          viewport={{ once: true }}
         >
           {word}
-        </span>
+        </motion.span>
       );
     });
   };
@@ -96,13 +79,12 @@ const FounderNote = ({
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="founder-image-wrapper">
-              <div className="founder-image">
-                {/* <img src={founderImage} alt={founderName} /> */}
-              </div>
+              <div className="founder-image"></div>
             </div>
             <div className="founder-details">
-              <p className="founder-name">{founderTitle}</p>
-              <p className="founder-title">{founderName}</p>
+              <p className="founder-name">
+                {founderTitle}
+              </p>
             </div>
           </motion.div>
         </div>

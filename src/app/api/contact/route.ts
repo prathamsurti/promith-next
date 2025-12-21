@@ -5,10 +5,14 @@ interface ContactFormData {
   name: string;
   email: string;
   phone?: string;
-  company?: string;
+  restaurant?: string;
   service: string;
   message: string;
 }
+
+// In-memory store for submitted emails (resets on server restart)
+// For production, consider using Redis or a database
+const submittedEmails = new Set<string>();
 
 // Email template
 function generateEmailHTML(data: ContactFormData): string {
@@ -127,10 +131,10 @@ function generateEmailHTML(data: ContactFormData): string {
       </div>
       ` : ''}
 
-      ${data.company ? `
+      ${data.restaurant ? `
       <div class="field">
-        <div class="field-label">Company</div>
-        <div class="field-value">${data.company}</div>
+        <div class="field-label">Restaurant</div>
+        <div class="field-value">${data.restaurant}</div>
       </div>
       ` : ''}
 
@@ -166,7 +170,7 @@ New Contact Form Submission
 Name: ${data.name}
 Email: ${data.email}
 ${data.phone ? `Phone: ${data.phone}` : ''}
-${data.company ? `Company: ${data.company}` : ''}
+${data.restaurant ? `Restaurant: ${data.restaurant}` : ''}
 Service: ${data.service}
 
 Message:
@@ -195,6 +199,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { success: false, error: 'Invalid email format' },
         { status: 400 }
+      );
+    }
+
+    // Check if email has already submitted
+    const normalizedEmail = body.email.toLowerCase().trim();
+    if (submittedEmails.has(normalizedEmail)) {
+      return NextResponse.json(
+        { success: false, error: 'You have already submitted an inquiry with this email address.' },
+        { status: 429 }
       );
     }
 
@@ -257,6 +270,9 @@ export async function POST(request: NextRequest) {
     </div>
     <div class="footer">
       <p>Promith - AI-Powered Automation Solutions</p>
+    // Add email to submitted list after successful send
+    submittedEmails.add(normalizedEmail);
+
     </div>
   </div>
 </body>

@@ -310,6 +310,27 @@
   }
 }
 
+/* Benefit Card Containers */
+.benefit-graphic-container {
+  position: absolute;
+  top: 27px;
+  left: 30px;
+  right: 30px;
+  height: 176px;
+  z-index: 10;
+}
+
+.benefit-text-container {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 30px;
+  width: 100%;
+}
+
 /* Text Content */
 .benefit-title {
   font-size: 28px;
@@ -406,6 +427,74 @@
   padding: 0 1rem;
 }
 
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 640px) {
+  .section-header {
+    margin-bottom: 4rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #4b5563;
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Benefits Grid */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+@media (min-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Badge pill */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  background-color: #f5f5f5;
+  box-shadow: 
+    6px 6px 12px #d1d1d1,
+    -6px -6px 12px #ffffff;
+}
+
+.badge-pill span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Section container */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
 /* Badge pill */
 .badge-pill {
   background-color: #f5f5f5;
@@ -415,6 +504,84 @@
 }
 
 /* Tag pills at bottom */
+.tag-pill {
+  background-color: rgb(245, 245, 245);
+  border-radius: 228px;
+  box-shadow: 
+    rgba(0, 0, 0, 0.08) 0px 0.706592px 0.706592px -0.666667px,
+    rgba(0, 0, 0, 0.08) 0px 1.80656px 1.80656px -1.33333px,
+    rgba(0, 0, 0, 0.07) 0px 3.62176px 3.62176px -2px,
+    rgba(0, 0, 0, 0.07) 0px 6.8656px 6.8656px -2.66667px,
+    rgba(0, 0, 0, 0.05) 0px 13.6468px 13.6468px -3.33333px,
+    rgba(0, 0, 0, 0.02) 0px 30px 30px -4px,
+    rgb(255, 255, 255) 0px 3px 1px 0px inset;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  transition: all 0.3s ease;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.tag-pill span:first-child {
+  margin-right: 0.5rem;
+}
+
+/* Marquee Container */
+.marquee-container {
+  width: 100%;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 10px;
+  margin-top: 4rem;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 12.5%,
+    rgb(0, 0, 0) 87.5%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.marquee-content {
+  display: flex;
+  gap: 24px;
+  animation: marquee 30s linear infinite;
+  will-change: transform;
+  align-items: center;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Tag pills at bottom - OLD (to be removed) */
 .tag-pill {
   background-color: rgb(245, 245, 245);
   border-radius: 228px;

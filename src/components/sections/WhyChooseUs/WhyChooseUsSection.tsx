@@ -24,7 +24,7 @@ const WhyChooseUsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="why-choose-section relative py-16 sm:py-20 lg:py-24 overflow-hidden"
+      className="why-choose-section"
     >
       <div className="section-container">
         {/* Section Header */}
@@ -32,21 +32,21 @@ const WhyChooseUsSection = () => {
           variants={fadeInUp}
           initial="initial"
           animate={isInView ? 'animate' : 'initial'}
-          className="section-header text-center mb-12 sm:mb-16"
+          className="section-header"
         >
-          <div className="badge-pill inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6">
-            <span className="text-sm font-medium text-gray-700">{content.whyChooseUs.badge}</span>
+          <div className="badge-pill">
+            <span>{content.whyChooseUs.badge}</span>
           </div>
-          <h2 className="gradient-heading mb-6">
+          <h2 className="gradient-heading">
             {content.whyChooseUs.title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="section-subtitle">
             {content.whyChooseUs.subtitle}
           </p>
         </motion.div>
 
         {/* Benefits Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 justify-items-center">
+        <div className="benefits-grid">
           {benefits.map((benefit, index) => (
             <BenefitCard
               key={index}
@@ -58,7 +58,7 @@ const WhyChooseUsSection = () => {
         </div>
 
         {/* Bottom tabs/tags - Marquee */}
-        <div className="marquee-container" style={{ marginTop: '4rem' }}>
+        <div className="marquee-container">
           <motion.div
             initial={tagsVariants.initial}
             animate={isInView ? tagsVariants.animate : tagsVariants.initial}
@@ -68,9 +68,9 @@ const WhyChooseUsSection = () => {
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className="tag-pill px-4 py-2 text-sm font-medium text-gray-700 rounded-full transition-colors cursor-default whitespace-nowrap"
+                className="tag-pill"
               >
-                <span className="mr-2">⚡</span>
+                <span>⚡</span>
                 {tag}
               </span>
             ))}

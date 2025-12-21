@@ -1,32 +1,44 @@
 'use client';
 
-import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { ButtonLink } from '../ui/Button';
 import { fadeIn, slideUp, staggerContainer } from '../../utils/animations';
 import type { ButtonProps } from '../../types';
+import content from '../../data/content.json';
 import './HeroSection.css';
 
 export interface HeroSectionProps {
-  title: string | ReactNode;
+  title: string | React.ReactNode;
   subtitle: string;
   logoSrc?: string;
   ctaButtons?: ButtonProps[];
   backgroundGradient?: string;
   backgroundImage?: string;
-  showParticles?: boolean;
   centered?: boolean;
 }
 
 const HeroSection = ({
   title,
   subtitle,
-  logoSrc,
-  ctaButtons = [],
+  logoSrc = content.navigation.logo,
+  ctaButtons = content.hero.ctaButtons as ButtonProps[],
   backgroundGradient = '',
   backgroundImage,
   centered = true,
 }: HeroSectionProps) => {
+  // Convert JSON icon data to React elements for CTA buttons
+  const convertedCtaButtons = ctaButtons.map(button => ({
+    ...button,
+    variant: button.variant as 'cta' | 'outline' | 'primary' | 'secondary' | 'ghost' | 'link',
+    size: button.size as 'sm' | 'md' | 'lg',
+    iconPosition: button.iconPosition as 'left' | 'right',
+    icon: button.icon && typeof button.icon === 'object' && 'viewBox' in button.icon ? (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox={(button.icon as any).viewBox} className="w-4 h-4">
+        <path d={(button.icon as any).content}></path>
+      </svg>
+    ) : undefined
+  }));
+
   return (
     <section
       className={`relative overflow-hidden ${backgroundGradient}`}
@@ -40,25 +52,27 @@ const HeroSection = ({
           : { backgroundColor: '#f5f5f5' }
       }
     >
-      {/* Background overlay for image */}
+      {/* Background overlay */}
       {backgroundImage && (
-        <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+        <div className="hero-overlay" aria-hidden />
       )}
 
+      {/* Main Content */}
       <motion.div
-        className={`hero-section-container ${
-          centered ? 'text-center' : ''
-        }`}
+        className="hero-section-container"
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        {/* Logo & Title Container */}
-        <motion.div className="hero-title-container" variants={slideUp}>
-          {/* Logo without background */}
+        {/* Logo + Title */}
+        <motion.div
+          className="hero-title-container"
+          variants={slideUp}
+        >
           {logoSrc && (
             <div className="hero-logo-wrapper">
+              {/* Logo commented out as per user's code */}
               {/* <img 
                 src={logoSrc} 
                 alt="Promith Logo" 
@@ -71,10 +85,11 @@ const HeroSection = ({
             </div>
           )}
 
-          {/* Title with gradient text */}
           <h1 className="hero-title">
             {typeof title === 'string' ? (
-              <span className="hero-title-gradient">{title}</span>
+              <span className="hero-title-gradient">
+                {title}
+              </span>
             ) : (
               title
             )}
@@ -82,19 +97,20 @@ const HeroSection = ({
         </motion.div>
 
         {/* Subtitle */}
-        <motion.p className="hero-subtitle" variants={slideUp}>
+        <motion.p
+          className="hero-subtitle"
+          variants={slideUp}
+        >
           {subtitle}
         </motion.p>
 
         {/* CTA Buttons */}
-        {ctaButtons.length > 0 && (
+        {convertedCtaButtons.length > 0 && (
           <motion.div
-            className={`flex flex-col sm:flex-row gap-4 ${
-              centered ? 'justify-center' : ''
-            }`}
+            className="flex"
             variants={fadeIn}
           >
-            {ctaButtons.map((button, index) => (
+            {convertedCtaButtons.map((button, index) => (
               <ButtonLink
                 key={index}
                 variant={button.variant || 'primary'}
@@ -116,7 +132,7 @@ const HeroSection = ({
       {/* Background Video */}
       <div className="hero-video-container">
         <video
-          src="/2K Animation.mp4"
+          src="/2K animation.mp4"
           loop
           muted
           playsInline
@@ -124,7 +140,6 @@ const HeroSection = ({
           className="hero-video"
         />
       </div>
-
     </section>
   );
 };

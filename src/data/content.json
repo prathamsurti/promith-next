@@ -1,5 +1,6 @@
 {
   "hero": {
+    "hidden": false,
     "title": "Promith",
     "subtitle": "More than just a system",
     "logoSize": {
@@ -19,22 +20,18 @@
           "viewBox": "0 0 256 256"
         },
         "iconPosition": "right"
-      },
-      {
-        "label": "Get Started",
-        "href": "/#features",
-        "variant": "outline",
-        "size": "lg"
       }
     ]
   },
   "founderNote": {
+    "hidden": false,
     "quote": "\"Fire has always existed, but it was Prometheus who gave it to humanity - a gift that changed everything. Technology is no different: it's already here, all around us. We're here to guide you in harnessing it, making it simple, accessible, and powerful for your business. Our mission is to turn complex tools into smart, easy-to-use solutions that help you grow, innovate, and succeed.\"",
     "founderName": "Pratham Surti",
     "founderTitle": "Founder of Promith",
     "founderImage": "https://framerusercontent.com/images/W7xYkGKzPzvnPv58ZBNzxS3JZI.jpg?width=4000&height=4000"
   },
   "whyChooseUs": {
+    "hidden": false,
     "badge": "WHY CHOOSE US",
     "title": "Unified Operations Platform",
     "subtitle": "See beyond the numbers. Act with precision. Grow with intelligence.",
@@ -65,6 +62,7 @@
     ]
   },
   "features": {
+    "hidden": false,
     "badge": "FEATURES",
     "title": "All features in 1 tool",
     "subtitle": "Discover features that simplify workflows & grow your business.",
@@ -132,46 +130,33 @@
     ]
   },
   "process": {
+    "hidden": false,
     "badge": "PROCESS",
-    "title": "Comprehensible User Experience",
+    "title": "Simple & Scalable",
     "subtitle": "A transparent process of collaboration and feedback",
     "steps": [
       {
         "number": "01",
         "title": "Workflow Assessment",
         "description": "We spend time with you to understand your business and your data. Then, we provide support and solutions designed to fit your needs - helping you streamline operations and achieve growth.",
-        "image": "https://framerusercontent.com/images/I11kmPYZO5IptYaE3LYgilI1Xk.jpeg?width=1200&height=800",
-        "icon": {
-          "type": "svg",
-          "content": "<path d=\"M21 8c-1.45 0-2.26 1.44-1.93 2.51l-3.55 3.56c-.3-.09-.74-.09-1.04 0l-2.55-2.55C12.27 10.45 11.46 9 10 9c-1.45 0-2.27 1.44-1.93 2.52l-4.56 4.55C2.44 15.74 1 16.55 1 18c0 1.1.9 2 2 2 1.45 0 2.26-1.44 1.93-2.51l4.55-4.56c.3.09.74.09 1.04 0l2.55 2.55C12.73 16.55 13.54 18 15 18c1.45 0 2.27-1.44 1.93-2.52l3.56-3.55c1.07.33 2.51-.48 2.51-1.93 0-1.1-.9-2-2-2z\"></path><path d=\"M15 9l.94-2.07L18 6l-2.06-.93L15 3l-.92 2.07L12 6l2.08.93zM3.5 11L4 9l2-.5L4 8l-.5-2L3 8l-2 .5L3 9z\"></path>",
-          "viewBox": "0 0 24 24"
-        }
+        "image": "https://framerusercontent.com/images/I11kmPYZO5IptYaE3LYgilI1Xk.jpeg?width=1200&height=800"
       },
       {
         "number": "02",
         "title": "Deploy with Confidence",
         "description": "Deploy your systems with zero stress. We provide you end-to-end support, ensuring your processes run effortlessly and your team is empowered to succeed.",
-        "image": "https://framerusercontent.com/images/ozpQ1n5ntn1iNwWiM7StpAZO2IM.jpeg?scale-down-to=1024",
-        "icon": {
-          "type": "svg",
-          "content": "<path d=\"M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z\"></path>",
-          "viewBox": "0 0 24 24"
-        }
+        "image": "https://framerusercontent.com/images/ozpQ1n5ntn1iNwWiM7StpAZO2IM.jpeg?scale-down-to=1024"
       },
       {
         "number": "03",
-        "title": "Ongoing Support & Optimisation",
+        "title": "Ongoing Support & Optimization",
         "description": "With us, you're never alone. Our AI assistant, Agani, monitors your operations, provides insights, and offers second opinions to guide your growth. And our 24/7 helpline isn't just for tech support - it's your growth partner, ready to advise, guide, and help you make smarter business decisions anytime.",
-        "image": "https://framerusercontent.com/images/rL2mn1WNvlJqhxa5RfsgWqkaxg.png?width=800&height=1015",
-        "icon": {
-          "type": "svg",
-          "content": "<path d=\"M21 12.22C21 6.73 16.74 3 12 3c-4.69 0-9 3.65-9 9.28-.6.34-1 .98-1 1.72v2c0 1.1.9 2 2 2h1v-6.1c0-3.87 3.13-7 7-7s7 3.13 7 7V19h-8v2h8c1.1 0 2-.9 2-2v-1.22c.59-.31 1-.92 1-1.64v-2.3c0-.7-.41-1.31-1-1.62z\"></path><circle cx=\"9\" cy=\"13\" r=\"1\"></circle><circle cx=\"15\" cy=\"13\" r=\"1\"></circle><path d=\"M18 11.03C17.52 8.18 15.04 6 12.05 6c-3.03 0-6.29 2.51-6.03 6.45 2.47-1.01 4.33-3.21 4.86-5.89 1.31 2.63 4 4.44 7.12 4.47z\"></path>",
-          "viewBox": "0 0 24 24"
-        }
+        "image": "https://framerusercontent.com/images/rL2mn1WNvlJqhxa5RfsgWqkaxg.png?width=800&height=1015"
       }
     ]
   },
   "testimonials": {
+    "hidden": true,
     "title": "Loved by Teams Worldwide",
     "subtitle": "See what our customers have to say about their experience",
     "testimonials": [
@@ -209,13 +194,14 @@
     },
     "links": [
       { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about" },
       { "label": "Features", "href": "/#features" },
       { "label": "Process", "href": "/#process" },
       { "label": "Contact", "href": "/contact" }
     ],
     "socialLinks": [
       { "platform": "linkedin", "url": "https://linkedin.com/company/promith" },
-      { "platform": "twitter", "url": "https://twitter.com/promith" }
+      { "platform": "instagram", "url": "https://www.instagram.com/promithuk/" }
     ]
   },
   "footer": {
@@ -226,27 +212,14 @@
       "height": "48px"
     },
     "description": "More than just a system",
-    "links": {
-      "company": [
-        { "label": "About", "href": "/about" },
-        { "label": "Careers", "href": "/careers" },
-        { "label": "Contact", "href": "/contact" }
-      ],
-      "services": [
-        { "label": "AI Automation", "href": "/services/ai-automation" },
-        { "label": "Workflow Optimisation", "href": "/services/workflow" },
-        { "label": "Analytics", "href": "/services/analytics" }
-      ],
-      "resources": [
-        { "label": "Documentation", "href": "/docs" },
-        { "label": "API", "href": "/api" },
-        { "label": "Support", "href": "/support" }
-      ]
-    },
+    "links": [
+      { "label": "About", "href": "/about" },
+      { "label": "Features", "href": "/#features" },
+      { "label": "Contact", "href": "/contact" }
+    ],
     "socialLinks": [
       { "platform": "linkedin", "url": "https://linkedin.com/company/promith" },
-      { "platform": "twitter", "url": "https://twitter.com/promith" },
-      { "platform": "github", "url": "https://github.com/promith" }
+      { "platform": "instagram", "url": "https://www.instagram.com/promithuk/" }
     ],
     "copyright": "© 2025 Promith. All rights reserved."
   },
@@ -359,6 +332,116 @@
         "signature": "Best regards,<br>The Promith Team",
         "footer": "Promith - AI-Powered Automation Solutions"
       }
+    }
+  },
+  "about": {
+    "hero": {
+      "hidden": false,
+      "badge": "Our Mission",
+      "title": "Building the brain <br class=\"hidden md:block\" /> <span class=\"text-black/40\">for modern business.</span>",
+      "description": "We believe that intelligence shouldn't be complicated. Promith bridges the gap between raw data and actionable growth, giving you the power to see further."
+    },
+    "stats": {
+      "hidden": true  ,
+      "items": [
+        { "number": "300+", "label": "Clients Served" },
+        { "number": "15M+", "label": "Data Points Processed" },
+        { "number": "99.9%", "label": "Uptime Guaranteed" },
+        { "number": "24/7", "label": "AI Support" }
+      ]
+    },
+    "story": {
+      "hidden": false,
+      "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1632&ixlib=rb-4.0.3",
+      "quote": "\"Fire has always existed, but it was Prometheus who gave it to humanity.\"",
+      "quoteAuthor": "— The inspiration behind Promith",
+      "badge": "Our Story",
+      "title": "From Complexity to Clarity",
+      "paragraphs": [
+        "Technology is ubiquitous. It surrounds us, shapes us, and drives us forward. But for many businesses, it remains a chaotic force—powerful, yet difficult to harness.",
+        "Promith was born from a desire to tame that chaos. We didn't just want to build another tool; we wanted to build a guiding light. A system that takes the overwhelming flood of operational data and refines it into a single, clear stream of intelligence.",
+        "Today, we empower teams worldwide to stop guessing and start growing. We turn \"what happened?\" into \"what's next?\""
+      ],
+      "ctaText": "Read our Manifesto"
+    },
+    "values": {
+      "hidden": false,
+      "badge": "Our Values",
+      "title": "What Drives Us",
+      "subtitle": "The principles that guide every line of code we write and every decision we make.",
+      "items": [
+        {
+          "title": "Radical Transparency",
+          "description": "We believe in open systems and honest data. No black boxes, just clear insights you can trust.",
+          "icon": "zap"
+        },
+        {
+          "title": "Human-Centric AI",
+          "description": "Automation shouldn't replace humans; it should elevate them. We build tools that empower your people.",
+          "icon": "heart"
+        },
+        {
+          "title": "Relentless Evolution",
+          "description": "The world doesn't stand still, and neither do we. We are constantly refining our models to keep you ahead.",
+          "icon": "target"
+        }
+      ]
+    },
+    "team": {
+      "hidden": true,
+      "badge": "The Team",
+      "title": "Meet the Makers",
+      "subtitle": "A diverse group of engineers, designers, and strategists united by a shared vision.",
+      "members": [
+        {
+          "name": "Pratham Surti",
+          "role": "Founder & CEO",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=687&ixlib=rb-4.0.3"
+        },
+        {
+          "name": "Sarah Jenkins",
+          "role": "Head of Product",
+          "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=687&ixlib=rb-4.0.3"
+        },
+        {
+          "name": "David Ross",
+          "role": "Lead Architect",
+          "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=687&ixlib=rb-4.0.3"
+        },
+        {
+          "name": "Elena Wu",
+          "role": "AI Research Lead",
+          "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=764&ixlib=rb-4.0.3"
+        }
+      ]
+    },
+    "backers": {
+      "hidden": false,
+      "title": "Backed by the best",
+      "subtitle": "Our vision is supported by some of the most trusted names in investment, sharing in our ambition to make positive change for restaurant owners, managers, chefs, baristas and customers alike.",
+      "logos": [
+       
+       
+        {
+          "name": "Accel",
+          "image": "/investors/accel.png",
+          "alt": "Accel"
+        },
+        {
+          "name": "Samaipata",
+          "image": "/investors/samaipata.png",
+          "alt": "Samaipata"
+        }
+      ]
+    },
+    "cta": {
+      "hidden": true,
+      "title": "Ready to shape the future?",
+      "subtitle": "Join us on our journey to redefine business intelligence. Let's build something extraordinary together.",
+      "buttons": [
+        { "label": "Join the Team", "variant": "primary" },
+        { "label": "Contact Us", "variant": "secondary" }
+      ]
     }
   },
   "metadata": {

@@ -8,7 +8,7 @@ export interface NavLink {
 }
 
 export interface SocialLink {
-  platform: 'twitter' | 'linkedin' | 'github' | 'instagram';
+  platform: 'linkedin' | 'instagram';
   url: string;
 }
 

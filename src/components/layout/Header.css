@@ -80,6 +80,16 @@
   color: black;
 }
 
+/* Desktop nav - visible by default on desktop */
+.desktop-nav {
+  display: flex;
+}
+
+/* Mobile nav - hidden by default */
+.mobile-nav {
+  display: none;
+}
+
 .desktop-cta {
   display: flex;
 }
@@ -118,7 +128,13 @@
     display: inline-flex;
   }
 
-  .navbar {
+  /* Hide desktop nav on mobile */
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Mobile nav base styles */
+  .mobile-nav {
     position: absolute;
     top: 100%;
     left: 0;
@@ -134,11 +150,11 @@
     display: none;
   }
 
-  .navbar.active {
+  .mobile-nav.active {
     display: flex;
   }
 
-  .navbar a {
+  .mobile-nav a {
     display: block;
     padding: 0.5rem 0.75rem;
     border-radius: 0.375rem;
@@ -147,7 +163,7 @@
     transition: all 0.2s ease;
   }
 
-  .navbar a:hover {
+  .mobile-nav a:hover {
     color: black;
     background: rgba(255, 255, 255, 0.1);
   }

@@ -11,21 +11,27 @@ export default async function Home() {
 
   return (
     <>
-      <HeroSection title={content.hero.title} subtitle={content.hero.subtitle} />
-      <FounderNote
-        quote={content.founderNote.quote}
-        founderName={content.founderNote.founderName}
-        founderTitle={content.founderNote.founderTitle}
-        founderImage={content.founderNote.founderImage}
-      />
-      <WhyChooseUsSection />
-      <FeatureGrid />
-      <ProcessSection />
-      <TestimonialsSection
-        title={content.testimonials.title}
-        subtitle={content.testimonials.subtitle}
-        testimonials={content.testimonials.testimonials}
-      />
+      {!content.hero.hidden && (
+        <HeroSection title={content.hero.title} subtitle={content.hero.subtitle} />
+      )}
+      {!content.founderNote.hidden && (
+        <FounderNote
+          quote={content.founderNote.quote}
+          founderName={content.founderNote.founderName}
+          founderTitle={content.founderNote.founderTitle}
+          founderImage={content.founderNote.founderImage}
+        />
+      )}
+      {!content.whyChooseUs.hidden && <WhyChooseUsSection />}
+      {!content.features.hidden && <FeatureGrid />}
+      {!content.process.hidden && <ProcessSection />}
+      {!content.testimonials.hidden && (
+        <TestimonialsSection
+          title={content.testimonials.title}
+          subtitle={content.testimonials.subtitle}
+          testimonials={content.testimonials.testimonials}
+        />
+      )}
     </>
   );
 }

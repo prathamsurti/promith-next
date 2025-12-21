@@ -68,9 +68,8 @@ export const FOOTER_LINKS = {
     { label: 'Terms', href: '/terms' },
   ],
   social: [
-    { platform: 'twitter', url: 'https://www.instagram.com/promithuk/' },
     { platform: 'linkedin', url: 'https://linkedin.com/company/promith' },
-    { platform: 'github', url: 'https://github.com/promith' },
+    { platform: 'instagram', url: 'https://www.instagram.com/promithuk/' },
   ],
 } as const;
 

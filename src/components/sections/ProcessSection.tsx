@@ -1,10 +1,12 @@
-'use client';
+'use client'
 
 import React from 'react'
+import ImageWithLoading from '@/components/ui/ImageWithLoading'
 import { motion } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 import './ProcessSection.css'
-import content from '../../data/content.json'
+// Adjust this import path based on your folder structure
+import content from '../../data/content.json' 
 
 const container: Variants = {
   hidden: {},
@@ -34,7 +36,7 @@ const ProcessSection: React.FC = () => {
           className="process-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div className="process-badge">
@@ -59,21 +61,16 @@ const ProcessSection: React.FC = () => {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {content.process.steps.map((step, index) => (
             <motion.div
               key={index}
+              // Apply slide animation only to the 3rd card (index 2), others fade up
               variants={index === 2 ? itemSlideRight : itemFadeUp}
               className="process-card"
             >
               <div className="process-card-content">
-                <div className="process-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox={step.icon.viewBox}>
-                    <path d={step.icon.content}></path>
-                  </svg>
-                </div>
-
                 <div className="process-text">
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
@@ -84,16 +81,26 @@ const ProcessSection: React.FC = () => {
                   <div className="number-wrapper">
                     <span className="number">{step.number}</span>
                     <div className="step-indicators">
-                      <div className={`step-dot ${index === 0 ? 'active' : ''}`}></div>
-                      <div className={`step-dot ${index === 1 ? 'active' : ''}`}></div>
-                      <div className={`step-dot ${index === 2 ? 'active' : ''}`}></div>
+                      {/* FIX: Progress logic. If index is 1, dot 0 and 1 are active. */}
+                      {[0, 1, 2].map((dotIndex) => (
+                         <div 
+                           key={dotIndex} 
+                           className={`step-dot ${dotIndex <= index ? 'active' : ''}`}
+                         />
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="process-image">
-                <img src={step.image} alt={step.title} />
+              <div className="process-image relative">
+                <ImageWithLoading 
+                  src={step.image} 
+                  alt={step.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
             </motion.div>
           ))}
