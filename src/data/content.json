@@ -7,7 +7,7 @@
       "width": "120px",
       "height": "120px"
     },
-    "backgroundVideo": "https://framerusercontent.com/assets/aMPvRVYHFQxBoB0v2qyJln83jI.mp4",
+    "backgroundVideo": "/hero_video.mp4",
     "ctaButtons": [
       {
         "label": "Get Demo",

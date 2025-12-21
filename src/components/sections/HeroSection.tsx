@@ -132,7 +132,7 @@ const HeroSection = ({
       {/* Background Video */}
       <div className="hero-video-container">
         <video
-          src="/2K animation.mp4"
+          src={content.hero.backgroundVideo}
           loop
           muted
           playsInline
