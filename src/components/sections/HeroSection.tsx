@@ -21,7 +21,7 @@ const HeroSection = ({
   title,
   subtitle,
   logoSrc = content.navigation.logo,
-  ctaButtons = content.hero.ctaButtons as ButtonProps[],
+  ctaButtons = content.hero.ctaButtons as any,
   backgroundGradient = '',
   backgroundImage,
   centered = true,
