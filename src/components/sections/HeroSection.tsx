@@ -10,21 +10,15 @@ import './HeroSection.css';
 export interface HeroSectionProps {
   title: string | React.ReactNode;
   subtitle: string;
-  logoSrc?: string;
   ctaButtons?: ButtonProps[];
-  backgroundGradient?: string;
   backgroundImage?: string;
-  centered?: boolean;
 }
 
 const HeroSection = ({
   title,
   subtitle,
-  logoSrc = content.navigation.logo,
   ctaButtons = content.hero.ctaButtons as any,
-  backgroundGradient = '',
   backgroundImage,
-  centered = true,
 }: HeroSectionProps) => {
   // Convert JSON icon data to React elements for CTA buttons
   const convertedCtaButtons = ctaButtons.map(button => ({
@@ -41,7 +35,7 @@ const HeroSection = ({
 
   return (
     <section
-      className={`relative overflow-hidden ${backgroundGradient}`}
+      className="hero-section"
       style={
         backgroundImage
           ? {
@@ -49,14 +43,9 @@ const HeroSection = ({
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }
-          : { backgroundColor: '#f5f5f5' }
+          : undefined
       }
     >
-      {/* Background overlay */}
-      {backgroundImage && (
-        <div className="hero-overlay" aria-hidden />
-      )}
-
       {/* Main Content */}
       <motion.div
         className="hero-section-container"
@@ -65,81 +54,26 @@ const HeroSection = ({
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        {/* Logo + Title */}
-        <motion.div
-          className="hero-title-container"
-          variants={slideUp}
-        >
-          {logoSrc && (
-            <div className="hero-logo-wrapper">
-              {/* Logo commented out as per user's code */}
-              {/* <img 
-                src={logoSrc} 
-                alt="Promith Logo" 
-                className="hero-logo-image"
-                style={{
-                  width: content.hero.logoSize?.width || '80px',
-                  height: content.hero.logoSize?.height || '80px'
-                }}
-              /> */}
-            </div>
-          )}
-
-          <h1 className="hero-title">
-            {typeof title === 'string' ? (
-              <span className="hero-title-gradient">
-                {title}
-              </span>
-            ) : (
-              title
-            )}
-          </h1>
-        </motion.div>
-
-        {/* Subtitle */}
-        <motion.p
-          className="hero-subtitle"
-          variants={slideUp}
-        >
-          {subtitle}
-        </motion.p>
-
-        {/* CTA Buttons */}
-        {convertedCtaButtons.length > 0 && (
+        {/* Centered text content */}
+        <div className="hero-text-content">
+          {/* Title */}
           <motion.div
-            className="flex"
-            variants={fadeIn}
+            className="hero-title-container"
+            variants={slideUp}
           >
-            {convertedCtaButtons.map((button, index) => (
-              <ButtonLink
-                key={index}
-                variant={button.variant || 'primary'}
-                size={button.size || 'lg'}
-                to={button.href}
-                icon={button.icon}
-                iconPosition={button.iconPosition}
-              >
-                {button.label}
-              </ButtonLink>
-            ))}
+            <h1 className="hero-title">{title}</h1>
           </motion.div>
-        )}
+
+          {/* Subtitle */}
+          <motion.p
+            className="hero-subtitle"
+            variants={slideUp}
+          >
+            {subtitle}
+          </motion.p>
+        </div>
+
       </motion.div>
-
-      {/* Hero Card at Bottom */}
-      <div className="hero-card-bottom" />
-
-      {/* Background Video */}
-      <div className="hero-video-container">
-        <video
-          src={content.hero.backgroundVideo}
-          loop
-          muted
-          playsInline
-          autoPlay
-          className="hero-video"
-        />
-      </div>
     </section>
   );
 };

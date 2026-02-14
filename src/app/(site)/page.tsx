@@ -12,7 +12,11 @@ export default async function Home() {
   return (
     <>
       {!content.hero.hidden && (
-        <HeroSection title={content.hero.title} subtitle={content.hero.subtitle} />
+        <HeroSection 
+          title={content.hero.title} 
+          subtitle={content.hero.subtitle} 
+          backgroundImage="/awd.png"
+        />
       )}
       {!content.founderNote.hidden && (
         <FounderNote

@@ -1,455 +1,132 @@
-/* HeroSection Styles */
+/* ===========================
+   HeroSection Styles
+   =========================== */
 
-/* Remove default spacing from hero section */
-section:has(.hero-section-container) {
-  margin-top: 0;
-  padding-top: 0;
+/* Section wrapper */
+.hero-section {
   position: relative;
   overflow: hidden;
+  margin-top: -4rem; /* Pull up behind the sticky header */
 }
 
-/* Background Overlay */
+/* Dark overlay for text readability over background image */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
   z-index: 0;
 }
 
-/* Hero Title Container */
+/* Main container - full viewport, centered content */
+.hero-section-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100vh;
+  min-height: 600px;
+  padding: 6rem 2rem 10px;
+  box-sizing: border-box;
+}
+
+/* Centered text block (title + subtitle) */
+.hero-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 600px;
+  padding-right: 50px;
+  gap: 1.5rem;
+}
+
+/* Title container */
 .hero-title-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
+  text-align: center;
 }
 
-/* Logo Wrapper */
-.hero-logo-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.hero-logo-image {
-  width: auto;
-  height: 80px;
-  object-fit: contain;
-}
-
-/* Hero Title with Gradient */
+/* H1 — large, bold hero title (matches FeatureGrid gradient-text style) */
 .hero-title {
   font-family: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 56px;
+  font-size: clamp(3rem, 7vw, 5.5rem);
   font-weight: 700;
   line-height: 1.1;
   margin: 0;
   letter-spacing: -0.02em;
-  text-align: left;
-}
-
-.hero-title-gradient {
-  background-image: linear-gradient(25deg, rgb(14, 28, 41) 34%, rgb(255, 255, 255) 124%);
-  background-clip: text;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(0deg, #0e1c29 34%, #ffffff 124%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;
+  background-clip: text;
 }
 
-/* Hero Subtitle */
+/* P — supporting subtitle text */
 .hero-subtitle {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 16px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
   line-height: 1.6;
-  color: #666;
-  margin: 0 0 32px 0;
+  color: rgba(14, 28, 41, 0.5);
+  margin: 0;
   max-width: 600px;
   text-align: center;
+  letter-spacing: 0.01em;
 }
 
-/* Hero CTA Buttons Container */
-.hero-section-container .flex {
+/* CTA button group — pinned to bottom */
+.hero-cta-group {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   gap: 1rem;
   flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
-/* Ensure buttons are centered on all screen sizes */
-@media (max-width: 1024px) {
-  .hero-section-container .flex {
-    flex-direction: column;
-    align-items: center;
-  }
-}
+/* ===========================
+   Responsive
+   =========================== */
 
 @media (max-width: 768px) {
-  .hero-section-container .flex {
+  .hero-section-container {
+    padding: 5rem 1.5rem 10px;
+    min-height: 100svh;
+  }
+
+  .hero-text-content {
+    gap: 1.25rem;
+  }
+
+  .hero-cta-group {
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-cta-group a,
+  .hero-cta-group button {
+    width: 100%;
     justify-content: center;
   }
 }
 
-@media (max-width: 640px) {
-  .hero-section-container .flex {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Main Hero Section Container */
-.hero-section-container {
-  align-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  column-gap: 32px;
-  display: flex;
-  flex-basis: auto;
-  flex-direction: column;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-wrap: nowrap;
-  font-family: sans-serif;
-  font-size: 12px;
-  height: 100vh;
-  min-height: 100vh;
-  
-  justify-content: center;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding: 0;
-  position: relative;
-  row-gap: 32px;
-  unicode-bidi: isolate;
-  width: 100%;
-  max-width: 2627px;
-  margin: 0 auto;
-  z-index: 1;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Background Video Container */
-.hero-video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  display: block;
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 0px;
-  cursor: auto;
-  
-  /* Filter to make it white */
-  /* filter: brightness(1) grayscale(1) invert(1); */
-}
-
-/* Hero Card at Bottom - Framer specifications */
-.hero-card-bottom {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  bottom: -47px;
-  left: 0;
-  right: 0;
-  height: 1206px;
-  width: 100%;
-  max-width: 100vw;
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
-  font-family: sans-serif;
-  font-size: 12px;
-  opacity: 1;
-  transform: none;
-  unicode-bidi: isolate;
-  will-change: transform;
-  z-index: 2;
-  -webkit-font-smoothing: antialiased;
-  
-  /* Framer filter effect: brightness(0.69) grayscale(1) invert(1) */
-  /* filter: brightness(0.69) grayscale(1) invert(1); */
-  
-  /* Background - adjust based on actual Framer design */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
-  border-radius: 20px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 480px) {
   .hero-section-container {
-    height: 100vh;
-    min-height: 100vh;
-  }
-
-  .hero-card-bottom {
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 800px;
+    padding: 4.5rem 1rem 10px;
   }
 }
-
-@media (max-width: 768px) {
-  .hero-section-container {
-    height: 100vh;
-    min-height: 100vh;
-    row-gap: 24px;
-    column-gap: 24px;
-  }
-
-  .hero-card-bottom {
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 600px;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-section-container {
-    height: 100vh;
-    min-height: 100vh;
-    row-gap: 20px;
-  }
-
-  .hero-card-bottom {
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 400px;
-    bottom: -30px;
-  }
-}
-
-.hero-title-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-/* Logo Wrapper */
-.hero-logo-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.hero-logo-image {
-  width: auto;
-  height: 80px;
-  object-fit: contain;
-}
-
-/* Hero Title with Gradient */
-.hero-title {
-  font-family: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.1;
-  margin: 0;
-  letter-spacing: -0.02em;
-  text-align: left;
-}
-
-.hero-title-gradient {
-  background-image: linear-gradient(25deg, rgb(14, 28, 41) 34%, rgb(255, 255, 255) 124%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
-/* Hero Subtitle */
-.hero-subtitle {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #666;
-  margin: 0 0 32px 0;
-  max-width: 600px;
-  text-align: center;
-}
-
-/* Hero CTA Buttons Container */
-.hero-section-container .flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
-/* Ensure buttons are centered on all screen sizes */
-@media (max-width: 1024px) {
-  .hero-section-container .flex {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-section-container .flex {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-section-container .flex {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Main Hero Section Container */
-.hero-section-container {
-  align-content: center;
-  align-items: center;
-  box-sizing: border-box;
-  column-gap: 32px;
-  display: flex;
-  flex-basis: auto;
-  flex-direction: column;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-wrap: nowrap;
-  font-family: sans-serif;
-  font-size: 12px;
-  height: 100vh;
-  min-height: 100vh;
-  
-  justify-content: center;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  padding: 0;
-  position: relative;
-  row-gap: 32px;
-  unicode-bidi: isolate;
-  width: 100%;
-  max-width: 2627px;
-  margin: 0 auto;
-  z-index: 1;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Background Video Container */
-.hero-video-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  display: block;
-  background-color: rgba(0, 0, 0, 0);
-  border-radius: 0px;
-  cursor: auto;
-  
-  /* Filter to make it white */
-  /* filter: brightness(1) grayscale(1) invert(1); */
-}
-
-/* Hero Card at Bottom - Framer specifications */
-.hero-card-bottom {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  bottom: -47px;
-  left: 0;  /* Changed from -176px to prevent horizontal scroll */
-  right: 0; /* Changed from -177px to prevent horizontal scroll */
-  height: 1206px;
-  width: 100%; /* Changed from 3418px to fit viewport */
-  max-width: 100vw; /* Ensure it doesn't exceed viewport width */
-  flex-basis: auto;
-  flex-grow: 0;
-  flex-shrink: 0;
-  font-family: sans-serif;
-  font-size: 12px;
-  opacity: 1;
-  transform: none;
-  unicode-bidi: isolate;
-  will-change: transform;
-  z-index: 2;
-  -webkit-font-smoothing: antialiased;
-  
-  /* Framer filter effect: brightness(0.69) grayscale(1) invert(1) */
-  /* filter: brightness(0.69) grayscale(1) invert(1); */
-  
-  /* Background - adjust based on actual Framer design */
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.02) 100%);
-  border-radius: 20px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-  .hero-section-container {
-    height: 100vh;
-    min-height: 100vh;
-  }
-
-  .hero-card-bottom {
-    left: 0; /* Changed from -100px to prevent horizontal scroll */
-    right: 0; /* Changed from -100px to prevent horizontal scroll */
-    width: 100%;
-    height: 800px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-section-container {
-    height: 100vh;
-    min-height: 100vh;
-    row-gap: 24px;
-    column-gap: 24px;
-  }
-
-  .hero-card-bottom {
-    left: 0; /* Changed from -50px to prevent horizontal scroll */
-    right: 0; /* Changed from -50px to prevent horizontal scroll */
-    width: 100%;
-    height: 600px;
-  }
-}
-
-@media (max-width: 640px) {
-  .hero-section-container {
-    height: 100vh;
-    min-height: 100vh;
-    row-gap: 20px;
-  }
-
-  .hero-card-bottom {
-    left: 0; /* Changed from -20px to prevent horizontal scroll */
-    right: 0; /* Changed from -20px to prevent horizontal scroll */
-    width: 100%;
-    height: 400px;
-    bottom: -30px;
-  }
-}
-

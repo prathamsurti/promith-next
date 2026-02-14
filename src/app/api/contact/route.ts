@@ -270,9 +270,6 @@ export async function POST(request: NextRequest) {
     </div>
     <div class="footer">
       <p>Promith - AI-Powered Automation Solutions</p>
-    // Add email to submitted list after successful send
-    submittedEmails.add(normalizedEmail);
-
     </div>
   </div>
 </body>
@@ -281,6 +278,9 @@ export async function POST(request: NextRequest) {
     };
 
     await transporter.sendMail(confirmationMailOptions);
+
+    // Add email to submitted list after successful send
+    submittedEmails.add(normalizedEmail);
 
     return NextResponse.json(
       { success: true, message: 'Email sent successfully' },
